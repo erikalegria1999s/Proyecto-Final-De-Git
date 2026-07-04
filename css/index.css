@@ -1,0 +1,163 @@
+:root {
+    /* colores de la marca */
+    --btn-primary: #00E5FF;
+    --sombra-btn-primary: linear-gradient(135deg, #00E5FF, #0047AB);
+    --titulo-primary: #0047AB;
+
+    /* Colores para texto */
+    --texto-claro: #FFFFFF;
+    --texto-oscuro: #000000;
+    --texto-primary: #0F172A;
+    --texto-secundary: #475569;
+    
+    /* colores de fondo y estructura */
+    --fondo-pagina: #FFFFFF;
+    --fondo-tarjetas-secciones: #F0F4F8;
+    --bordes-separadores: #D9D9D9;
+    
+    /* sombras */
+    --sombra-tarjeta: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --sombra-hovers: 0 10px 15px -3px rgba(0, 0, 0, 0.25);
+    
+    /* Transición suave global */
+    --transition: all 0.3s ease;
+}
+
+/* 1. Estilos Globales y Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía limpia */
+}
+
+body {
+    background-color: var(--fondo-pagina);
+    color: var(--texto-primary);
+}
+
+/* 2. Estructura de la Barra de Navegación */
+header {
+    background-color: var(--fondo-tarjetas-secciones);
+    border-bottom: 1px solid var(--bordes-separadores);
+    box-shadow: var(--sombra-tarjeta);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px; /* Centra el contenido en pantallas anchas */
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+/* Bloque Izquierdo (Logo, Links principales, Buscador) */
+.nav-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    height: 40px; /* Ajusta según el tamaño de tu imagen */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Enlaces de navegación principales */
+.links-principales {
+    display: flex;
+    gap: 20px;
+}
+
+.links-principales a {
+    text-decoration: none;
+    color: var(--texto-secundary);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.links-principales a:hover {
+    color: var(--titulo-primary); /* Efecto hover con el azul de la marca */
+}
+
+/* 3. Componente de Buscador */
+.buscador {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: var(--fondo-pagina);
+    border: 1px solid var(--bordes-separadores);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.buscador:focus-within {
+    border-color: var(--titulo-primary);
+    box-shadow: 0 0 0 2px rgba(0, 71, 171, 0.2);
+}
+
+.buscador input[type="search"] {
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    color: var(--texto-primary);
+    font-size: 14px;
+    width: 220px;
+}
+
+.buscador input[type="search"]::placeholder {
+    color: var(--texto-secundary);
+    opacity: 0.7;
+}
+
+.btn-buscar {
+    background-color: transparent;
+    border: none;
+    color: var(--titulo-primary);
+    padding: 8px 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-buscar:hover {
+    background-color: rgba(0, 71, 171, 0.1);
+}
+
+/* 4. Bloque Derecho (Login y Registro) */
+.links-usuario {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.links-usuario a {
+    text-decoration: none;
+    color: var(--texto-secundary);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.links-usuario a:hover {
+    color: var(--texto-oscuro);
+}
+
+/* Botón de Registro Destacado con Gradiente */
+.links-usuario .btn-registro {
+    background: var(--sombra-btn-primary); /* Usa tu gradiente de marca */
+    color: var(--texto-claro);
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: var(--sombra-tarjeta);
+}
+
+.links-usuario .btn-registro:hover {
+    color: var(--texto-claro);
+    box-shadow: var(--sombra-hovers);
+    transform: translateY(-1px); /* Pequeño efecto de elevación */
+}
