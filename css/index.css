@@ -1,7 +1,7 @@
 :root {
-    /* colores de la marca */
+    /* Colores de la marca */
     --btn-primary: #00E5FF;
-    --sombra-btn-primary: linear-gradient(135deg, #00E5FF, #0047AB);
+    --gradiente-primary: linear-gradient(135deg, #00E5FF, #0047AB);
     --titulo-primary: #0047AB;
 
     /* Colores para texto */
@@ -10,17 +10,17 @@
     --texto-primary: #0F172A;
     --texto-secundary: #475569;
     
-    /* colores de fondo y estructura */
+    /* Colores de fondo y estructura */
     --fondo-pagina: #FFFFFF;
-    --fondo-tarjetas-secciones: #F0F4F8;
-    --bordes-separadores: #D9D9D9;
+    --fondo-tarjetas-secciones: #F8FAFC;
+    --bordes-separadores: #E2E8F0;
     
-    /* sombras */
-    --sombra-tarjeta: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --sombra-hovers: 0 10px 15px -3px rgba(0, 0, 0, 0.25);
+    /* Sombras */
+    --sombra-tarjeta: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --sombra-hovers: 0 10px 15px -3px rgba(0, 71, 171, 0.2);
     
     /* Transición suave global */
-    --transition: all 0.3s ease;
+    --transition: all 0.25s ease-in-out;
 }
 
 /* 1. Estilos Globales y Reset */
@@ -28,7 +28,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía limpia */
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 body {
@@ -38,29 +38,33 @@ body {
 
 /* 2. Estructura de la Barra de Navegación */
 header {
-    background-color: var(--fondo-tarjetas-secciones);
+    background-color: var(--fondo-pagina);
     border-bottom: 1px solid var(--bordes-separadores);
     box-shadow: var(--sombra-tarjeta);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px; /* Centra el contenido en pantallas anchas */
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 15px 20px;
+    padding: 12px 24px;
 }
 
 /* Bloque Izquierdo (Logo, Links principales, Buscador) */
 .nav-izquierda {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 30px;
+    flex-grow: 1;
 }
 
 .logo {
-    height: 40px; /* Ajusta según el tamaño de tu imagen */
+    height: 38px;
     width: auto;
     object-fit: contain;
 }
@@ -75,89 +79,115 @@ header {
     text-decoration: none;
     color: var(--texto-secundary);
     font-weight: 500;
+    font-size: 15px;
     transition: var(--transition);
 }
 
 .links-principales a:hover {
-    color: var(--titulo-primary); /* Efecto hover con el azul de la marca */
+    color: var(--titulo-primary);
 }
 
 /* 3. Componente de Buscador */
 .buscador {
     display: flex;
-    gap: 20px;
     align-items: center;
-    background-color: var(--fondo-pagina);
+    background-color: var(--fondo-tarjetas-secciones);
     border: 1px solid var(--bordes-separadores);
-    border-radius: 8px;
-    overflow: hidden;
+    border-radius: 20px; /* Bordes más redondeados para un toque moderno */
+    padding: 2px 6px 2px 14px;
     transition: var(--transition);
+    max-width: 300px;
+    width: 100%;
 }
 
 .buscador:focus-within {
     border-color: var(--titulo-primary);
-    box-shadow: 0 0 0 2px rgba(0, 71, 171, 0.2);
+    background-color: var(--fondo-pagina);
+    box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.15);
 }
 
 .buscador input[type="search"] {
     border: none;
     outline: none;
-    padding: 8px 12px;
+    background: transparent;
+    padding: 8px 0;
     color: var(--texto-primary);
     font-size: 14px;
-    width: 220px;
+    width: 100%;
 }
 
 .buscador input[type="search"]::placeholder {
     color: var(--texto-secundary);
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .btn-buscar {
-    background-color: transparent;
+    background-color: var(--titulo-primary);
     border: none;
-    color: var(--titulo-primary);
-    padding: 8px 15px;
+    color: var(--texto-claro);
+    padding: 6px 14px;
+    border-radius: 14px;
+    font-size: 13px;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
 }
 
 .btn-buscar:hover {
-    background-color: rgba(0, 71, 171, 0.1);
+    background-color: #003380;
 }
 
 /* 4. Bloque Derecho (Login y Registro) */
 .links-usuario {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 30px;
+    gap: 16px;
+    /* Se remueve el padding de 30px que desalineaba el header */
 }
 
 .links-usuario a {
     text-decoration: none;
-    color: var(--texto-secundary);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 14px;
     transition: var(--transition);
 }
 
-.links-usuario a:hover {
-    color: var(--texto-oscuro);
+.btn-login {
+    color: var(--texto-secundary);
+    padding: 8px 12px;
+}
+
+.btn-login:hover {
+    color: var(--titulo-primary);
 }
 
 /* Botón de Registro Destacado con Gradiente */
 .links-usuario .btn-registro {
-    background: var(--sombra-btn-primary); /* Usa tu gradiente de marca */
+    background: var(--gradiente-primary);
     color: var(--texto-claro);
-    padding: 8px 20px;
-    border-radius: 6px;
-    font-weight: 600;
+    padding: 9px 20px;
+    border-radius: 8px;
     box-shadow: var(--sombra-tarjeta);
 }
 
 .links-usuario .btn-registro:hover {
-    color: var(--texto-claro);
     box-shadow: var(--sombra-hovers);
-    transform: translateY(-1px); /* Pequeño efecto de elevación */
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+/* 5. Adaptabilidad para Móviles (Responsive) */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-izquierda {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+    .buscador {
+        max-width: 100%;
+    }
 }
