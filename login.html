@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Iniciar Sesión | Tu Curso Soft</title>
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <header>
+        <nav class="navbar">            
+            <div class="nav-izquierda">
+                <a href="index.html">
+                    <img src="img/Logo.png" alt="Logo Tu Curso Soft" class="logo">
+                </a>
+                <div class="links-principales">
+                    <a href="index.html">Inicio</a>
+                    <a href="curso.html">Cursos</a>
+                    <a href="nosotros.html">Nosotros</a>
+                </div>
+            </div>            
+            <div class="links-usuario">
+                <a href="registro.html" class="btn-login">Registro</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN FORMULARIO DE INICIO DE SESIÓN -->
+    <main class="auth-container">
+        <div class="auth-card">
+            <h2>¡Hola de nuevo!</h2>
+            <p class="auth-subtitulo">Ingresa a tu cuenta para continuar aprendiendo.</p>
+
+            <form action="/login" method="POST" class="auth-form">
+                <!-- Correo electrónico -->
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                </div>
+
+                <!-- Contraseña -->
+                <div class="form-group">
+                    <div class="label-with-link">
+                        <label for="password">Contraseña</label>
+                        <a href="#" class="link-olvido">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required minlength="8">
+                </div>
+
+                <!-- Recordar sesión -->
+                <div class="form-checkbox">
+                    <input type="checkbox" id="recordar" name="recordar">
+                    <label for="recordar">Recordar mi sesión en este dispositivo</label>
+                </div>
+
+                <!-- Botón de Inicio de Sesión -->
+                <button type="submit" class="btn-submit">Iniciar Sesión</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>¿Aún no tienes una cuenta? <a href="registro.html">Regístrate gratis</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-contenido">
+            <p>&copy; 2026 Tu Curso Soft. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

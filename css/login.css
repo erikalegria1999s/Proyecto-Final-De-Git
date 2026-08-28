@@ -1,0 +1,360 @@
+/* ==========================================================================
+PALETA DE COLORES Y VARIABLES GLOBALES
+   ========================================================================== */
+:root {
+    /* 1. Colores Principales / Marca */
+    --color-primary-cyan: #00E5FF;       /* Cían brillante para acentos y destacados */
+    --color-primary-blue: #0047AB;       /* Azul cobalto para títulos y elementos principales */
+    --color-primary-dark-blue: #003380;  /* Azul oscuro para estados hover */
+    
+    /* Gradientes */
+    --gradiente-primary: linear-gradient(135deg, var(--color-primary-cyan), var(--color-primary-blue));
+    --gradiente-primary-hover: linear-gradient(135deg, #00C8E0, #003380);
+    --gradiente-fondo: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+
+    /* 2. Colores Neutros (Texto y Fondos) */
+    --color-texto-principal: #0F172A;   /* Azul slate muy oscuro para máxima legibilidad */
+    --color-texto-secundario: #475569;  /* Slate medio para subtítulos y textos secundarios */
+    --color-texto-blanco: #FFFFFF;      /* Blanco para textos sobre fondos oscuros */
+    --color-texto-mutado: #94A3B8;      /* Gris para placeholders e indicaciones */
+
+    /* 3. Colores de Estructura y Superficie */
+    --color-fondo-pagina: #FFFFFF;       /* Fondo limpio principal */
+    --color-fondo-tarjeta: #FFFFFF;      /* Fondo de tarjetas */
+    --color-fondo-seccion: #F8FAFC;      /* Gris ultraclaro para contrastes */
+    --color-borde: #E2E8F0;              /* Gris claro para líneas y divisiones */
+    --color-borde-focus: #0047AB;        /* Azul al enfocar campos de texto */
+
+    /* 4. Colores de Estado (Feedback para Formulario) */
+    --color-exito: #10B981;              /* Verde para campos válidos */
+    --color-error: #EF4444;              /* Rojo para errores de validación */
+    --color-advertencia: #F59E0B;        /* Amarillo para alertas */
+
+    /* 5. Sombras y Efectos Visuales */
+    --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --sombra-tarjeta: 0 10px 25px -5px rgba(0, 71, 171, 0.08), 0 8px 10px -6px rgba(0, 71, 171, 0.04);
+    --sombra-hover-btn: 0 10px 15px -3px rgba(0, 71, 171, 0.3);
+    --sombra-focus: 0 0 0 4px rgba(0, 71, 171, 0.15);
+
+    /* 6. Transiciones y Tiempos */
+    --transicion-rapida: all 0.2s ease;
+    --transicion-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+1. RESET Y ESTILOS BASE
+   ========================================================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo-pagina);
+    color: var(--color-texto-principal);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+2. BARRA DE NAVEGACIÓN (HEADER & NAVBAR)
+   ========================================================================== */
+header {
+    background-color: var(--color-fondo-pagina);
+    border-bottom: 1px solid var(--color-borde);
+    box-shadow: var(--sombra-suave);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 14px 24px;
+}
+
+.nav-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-grow: 1;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transicion-rapida);
+}
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+.links-principales {
+    display: flex;
+    gap: 24px;
+}
+
+.links-principales a {
+    text-decoration: none;
+    color: var(--color-texto-secundario);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transicion-rapida);
+}
+
+.links-principales a:hover {
+    color: var(--color-primary-blue);
+}
+
+.links-usuario {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-login {
+    text-decoration: none;
+    color: var(--color-texto-secundario);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: var(--transicion-rapida);
+}
+
+.btn-login:hover {
+    color: var(--color-primary-blue);
+    background-color: var(--color-fondo-seccion);
+}
+
+/* ==========================================================================
+3. CONTENEDOR Y TARJETA DE AUTENTICACIÓN (LOGIN & REGISTRO)
+   ========================================================================== */
+.auth-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--gradiente-fondo);
+    padding: 50px 20px;
+}
+
+.auth-card {
+    background-color: var(--color-fondo-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 16px;
+    padding: 44px 36px;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: var(--sombra-tarjeta);
+    transition: var(--transicion-suave);
+}
+
+.auth-card:hover {
+    box-shadow: 0 20px 30px -10px rgba(0, 71, 171, 0.12);
+}
+
+.auth-card h2 {
+    color: var(--color-primary-blue);
+    font-size: 1.85rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.auth-subtitulo {
+    color: var(--color-texto-secundario);
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+/* Formulario */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-texto-principal);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    background-color: var(--color-fondo-seccion);
+    font-size: 0.95rem;
+    color: var(--color-texto-principal);
+    transition: var(--transicion-rapida);
+}
+
+.form-group input::placeholder {
+    color: var(--color-texto-mutado);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-borde-focus);
+    background-color: var(--color-fondo-pagina);
+    box-shadow: var(--sombra-focus);
+}
+
+/* Alineación para contraseña olvidada */
+.label-with-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link-olvido {
+    font-size: 0.82rem;
+    color: var(--color-primary-blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-olvido:hover {
+    text-decoration: underline;
+}
+
+/* Checkbox de Términos / Recordar */
+.form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--color-texto-secundario);
+    margin-top: 4px;
+}
+
+.form-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--color-primary-blue);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.form-checkbox a {
+    color: var(--color-primary-blue);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.form-checkbox a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de Envío */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: var(--gradiente-primary);
+    color: var(--color-texto-blanco);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion-suave);
+}
+
+.btn-submit:hover {
+    box-shadow: var(--sombra-hover-btn);
+    transform: translateY(-2px);
+    opacity: 0.96;
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Pie de la tarjeta */
+.auth-footer {
+    text-align: center;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-borde);
+    font-size: 0.9rem;
+    color: var(--color-texto-secundario);
+}
+
+.auth-footer a {
+    color: var(--color-primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transicion-rapida);
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+4. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: var(--color-texto-principal);
+    color: var(--color-texto-secundario);
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 0.88rem;
+    margin-top: auto;
+}
+
+footer p {
+    color: #94A3B8;
+}
+
+/* ==========================================================================
+5. RESPONSIVE / ADAPTABILIDAD
+   ========================================================================== */
+@media (max-width: 640px) {
+    .navbar {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .nav-izquierda {
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .links-principales {
+        gap: 16px;
+    }
+
+    .auth-card {
+        padding: 30px 20px;
+    }
+
+    .auth-card h2 {
+        font-size: 1.5rem;
+    }
+}
