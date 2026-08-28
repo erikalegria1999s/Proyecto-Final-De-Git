@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cursos.css">
+    <title>Cursos Software</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">            
+            <!-- BLOQUE IZQUIERDO: Logo, enlaces principales y buscador -->
+            <div class="nav-izquierda">
+                <img src="img/Logo.png" alt="Logo Tu Curso Soft" class="logo">                
+                
+                <div class="links-principales">
+                    <a href="index.html">Inicio</a>
+                    <a href="curso.html">Cursos</a>
+                    <a href="nosotros.html">Nosotros</a>
+                </div>                
+                
+                <!-- Corregido: class="buscador" -->
+                <form action="/buscar" method="GET" class="buscador">
+                    <input 
+                        type="search" 
+                        name="q" 
+                        placeholder="¿Qué estás buscando?..." 
+                        aria-label="Buscar en el sitio"
+                        required>
+                    <button class="btn-buscar" type="submit">Buscar</button>
+                </form>
+            </div>            
+            
+            <!-- BLOQUE DERECHO: Acceso y Registro -->
+            <div class="links-usuario">
+                <a href="login.html" class="btn-login">Inicio de Sesión</a>
+                <a href="registro.html" class="btn-registro">Registro</a>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>
