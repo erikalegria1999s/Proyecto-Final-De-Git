@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Tu Curso Soft | Aprende Programación Web</title>
+</head>
+<body>
+    <!-- 1. NAVEGACIÓN -->
+    <header>
+        <nav class="navbar">            
+            <div class="nav-izquierda">
+                <img src="img/Logo.png" alt="Logo Tu Curso Soft" class="logo">                
+                <div class="links-principales">
+                    <a href="index.html">Inicio</a>
+                    <a href="curso.html">Cursos</a>
+                    <a href="nosotros.html">Nosotros</a>
+                </div>                
+                <form action="/buscar" method="GET" class="buscador">
+                    <input type="search" name="q" placeholder="¿Qué deseas aprender?..." aria-label="Buscar" required>
+                    <button class="btn-buscar" type="submit">Buscar</button>
+                </form>
+            </div>            
+            <div class="links-usuario">
+                <a href="login.html" class="btn-login">Inicio de Sesión</a>
+                <a href="registro.html" class="btn-registro">Registro</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 2. HERO / PRESENTACIÓN -->
+    <section class="hero">
+        <div class="hero-contenido">
+            <h1>Domina el Desarrollo Web desde Cero</h1>
+            <p>Aprende las tecnologías fundamentales para construir sitios web profesionales y llevar tus ideas al mundo digital.</p>
+            <div class="hero-botones">
+                <a href="registro.html" class="btn-principal">Empieza Gratis</a>
+                <a href="curso.html" class="btn-secundario">Ver Plan de Estudios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. POR QUÉ ELEGIRNOS (Beneficios) -->
+    <section class="beneficios">
+        <h2>¿Por qué aprender en Tu Curso Soft?</h2>
+        <div class="grid-beneficios">
+            <div class="tarjeta-beneficio">
+                <div class="icono-beneficio">🚀</div>
+                <h3>100% Práctico</h3>
+                <p>Aprenderás creando proyectos reales que podrás añadir directamente a tu portafolio.</p>
+            </div>
+            <div class="tarjeta-beneficio">
+                <div class="icono-beneficio">🧠</div>
+                <h3>Paso a Paso</h3>
+                <p>Explicaciones sencillas sin rodeos, ideales para quienes están empezando desde cero.</p>
+            </div>
+            <div class="tarjeta-beneficio">
+                <div class="icono-beneficio">📂</div>
+                <h3>Flujo Profesional</h3>
+                <p>No solo aprenderás a programar, sino también a gestionar y publicar tus proyectos con Git y GitHub.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. RUTA DE APRENDIZAJE -->
+    <section class="ruta">
+        <h2>Lo que aprenderás con nosotros</h2>
+        <p class="subtitulo-seccion">Un camino estructurado para convertirte en desarrollador web Front-End.</p>
+
+        <div class="timeline-tecnologias">
+            <div class="paso-tecnologia">
+                <span class="paso-numero">1</span>
+                <div class="paso-info">
+                    <h3>HTML5 & CSS3</h3>
+                    <p>La base de toda la web. Aprenderás a maquetar sitios elegantes, adaptables a teléfonos y computadores.</p>
+                </div>
+            </div>
+
+            <div class="paso-tecnologia">
+                <span class="paso-numero">2</span>
+                <div class="paso-info">
+                    <h3>JavaScript (JS)</h3>
+                    <p>El lenguaje de la web. Añadirás interactividad, lógica y dinamismo a tus aplicaciones.</p>
+                </div>
+            </div>
+
+            <div class="paso-tecnologia">
+                <span class="paso-numero">3</span>
+                <div class="paso-info">
+                    <h3>Git & GitHub</h3>
+                    <p>Control de versiones y publicación. Domina las herramientas estándar para trabajar en equipo y guardar tu código.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. LLAMADO A LA ACCIÓN FINAL (CTA) -->
+    <section class="cta-final">
+        <h2>¿Listo para dar el primer paso?</h2>
+        <p>Crea tu cuenta hoy y comienza a construir tu futuro como desarrollador.</p>
+        <a href="registro.html" class="btn-registro-cta">Crear Cuenta Gratis</a>
+    </section>
+
+    <!-- 6. PIE DE PÁGINA (Footer) -->
+    <footer>
+        <div class="footer-contenido">
+            <p>&copy; 2026 Tu Curso Soft. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

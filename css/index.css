@@ -1,0 +1,405 @@
+:root {
+    /* Colores de la marca */
+    --btn-primary: #00E5FF;
+    --gradiente-primary: linear-gradient(135deg, #00E5FF, #0047AB);
+    --titulo-primary: #0047AB;
+
+    /* Colores para texto */
+    --texto-claro: #FFFFFF;
+    --texto-oscuro: #000000;
+    --texto-primary: #0F172A;
+    --texto-secundary: #475569;
+    
+    /* Colores de fondo y estructura */
+    --fondo-pagina: #FFFFFF;
+    --fondo-tarjetas-secciones: #F8FAFC;
+    --bordes-separadores: #E2E8F0;
+    
+    /* Sombras */
+    --sombra-tarjeta: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --sombra-hovers: 0 10px 15px -3px rgba(0, 71, 171, 0.2);
+    
+    /* Transición suave global */
+    --transition: all 0.25s ease-in-out;
+}
+
+/* 1. Estilos Globales y Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--fondo-pagina);
+    color: var(--texto-primary);
+}
+
+/* 2. Estructura de la Barra de Navegación */
+header {
+    background-color: var(--fondo-pagina);
+    border-bottom: 1px solid var(--bordes-separadores);
+    box-shadow: var(--sombra-tarjeta);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 12px 24px;
+}
+
+/* Bloque Izquierdo (Logo, Links principales, Buscador) */
+.nav-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-grow: 1;
+}
+
+.logo {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Enlaces de navegación principales */
+.links-principales {
+    display: flex;
+    gap: 20px;
+}
+
+.links-principales a {
+    text-decoration: none;
+    color: var(--texto-secundary);
+    font-weight: 500;
+    font-size: 15px;
+    transition: var(--transition);
+}
+
+.links-principales a:hover {
+    color: var(--titulo-primary);
+}
+
+/* 3. Componente de Buscador */
+.buscador {
+    display: flex;
+    align-items: center;
+    background-color: var(--fondo-tarjetas-secciones);
+    border: 1px solid var(--bordes-separadores);
+    border-radius: 20px; /* Bordes más redondeados para un toque moderno */
+    padding: 2px 6px 2px 14px;
+    transition: var(--transition);
+    max-width: 300px;
+    width: 100%;
+}
+
+.buscador:focus-within {
+    border-color: var(--titulo-primary);
+    background-color: var(--fondo-pagina);
+    box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.15);
+}
+
+.buscador input[type="search"] {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 8px 0;
+    color: var(--texto-primary);
+    font-size: 14px;
+    width: 100%;
+}
+
+.buscador input[type="search"]::placeholder {
+    color: var(--texto-secundary);
+    opacity: 0.8;
+}
+
+.btn-buscar {
+    background-color: var(--titulo-primary);
+    border: none;
+    color: var(--texto-claro);
+    padding: 6px 14px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-buscar:hover {
+    background-color: #003380;
+}
+
+/* 4. Bloque Derecho (Login y Registro) */
+.links-usuario {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    /* Se remueve el padding de 30px que desalineaba el header */
+}
+
+.links-usuario a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.btn-login {
+    color: var(--texto-secundary);
+    padding: 8px 12px;
+}
+
+.btn-login:hover {
+    color: var(--titulo-primary);
+}
+
+/* Botón de Registro Destacado con Gradiente */
+.links-usuario .btn-registro {
+    background: var(--gradiente-primary);
+    color: var(--texto-claro);
+    padding: 9px 20px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-tarjeta);
+}
+
+.links-usuario .btn-registro:hover {
+    box-shadow: var(--sombra-hovers);
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+/* 5. Adaptabilidad para Móviles (Responsive) */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-izquierda {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+    .buscador {
+        max-width: 100%;
+    }
+}
+/* --- HERO --- */
+.hero {
+    background: linear-gradient(180deg, var(--fondo-tarjetas-secciones) 0%, var(--fondo-pagina) 100%);
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.hero-contenido {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    color: var(--titulo-primary);
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--texto-secundary);
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.hero-botones {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.btn-principal {
+    background: var(--gradiente-primary);
+    color: var(--texto-claro);
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: var(--sombra-tarjeta);
+    transition: var(--transition);
+}
+
+.btn-principal:hover {
+    box-shadow: var(--sombra-hovers);
+    transform: translateY(-2px);
+}
+
+.btn-secundario {
+    background: transparent;
+    color: var(--titulo-primary);
+    border: 2px solid var(--titulo-primary);
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-secundario:hover {
+    background-color: rgba(0, 71, 171, 0.08);
+}
+
+/* --- SECCIÓN BENEFICIOS --- */
+.beneficios {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.beneficios h2, .ruta h2 {
+    font-size: 2rem;
+    color: var(--texto-primary);
+    margin-bottom: 30px;
+}
+
+.grid-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.tarjeta-beneficio {
+    background-color: var(--fondo-tarjetas-secciones);
+    border: 1px solid var(--bordes-separadores);
+    border-radius: 12px;
+    padding: 30px 20px;
+    transition: var(--transition);
+}
+
+.tarjeta-beneficio:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-tarjeta);
+}
+
+.icono-beneficio {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.tarjeta-beneficio h3 {
+    margin-bottom: 10px;
+    color: var(--titulo-primary);
+}
+
+.tarjeta-beneficio p {
+    font-size: 0.95rem;
+    color: var(--texto-secundary);
+    line-height: 1.5;
+}
+
+/* --- SECCIÓN RUTA DE APRENDIZAJE --- */
+.ruta {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.subtitulo-seccion {
+    color: var(--texto-secundary);
+    margin-top: -15px;
+    margin-bottom: 40px;
+}
+
+.timeline-tecnologias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.paso-tecnologia {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: var(--fondo-pagina);
+    border: 1px solid var(--bordes-separadores);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--sombra-tarjeta);
+}
+
+.paso-numero {
+    background-color: var(--titulo-primary);
+    color: var(--texto-claro);
+    font-weight: 700;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.paso-info h3 {
+    color: var(--texto-primary);
+    margin-bottom: 6px;
+}
+
+.paso-info p {
+    color: var(--texto-secundary);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* --- CTA FINAL Y FOOTER --- */
+.cta-final {
+    background: var(--gradiente-primary);
+    color: var(--texto-claro);
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 60px;
+}
+
+.cta-final h2 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.cta-final p {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    opacity: 0.9;
+}
+
+.btn-registro-cta {
+    display: inline-block;
+    background-color: var(--fondo-pagina);
+    color: var(--titulo-primary);
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-registro-cta:hover {
+    background-color: var(--fondo-tarjetas-secciones);
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: var(--texto-primary);
+    color: var(--texto-secundary);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+}
